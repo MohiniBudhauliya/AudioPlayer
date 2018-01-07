@@ -1,0 +1,15 @@
+<resources>
+    <style name="myDialog" parent="Theme.AppCompat.Dialog"/>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/cast_intro_overlay_background_color</item>
+        <item name="colorPrimaryDark">@color/cast_intro_overlay_background_color</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+</resources>
+
+    <!---->

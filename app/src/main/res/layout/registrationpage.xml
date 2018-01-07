@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/musicregimg"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/response"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="20dp"
+        android:textColor="#A3C1AD"
+        android:layout_marginLeft="5pt"
+        android:layout_marginRight="16pt"/>
+
+<LinearLayout
+    android:id="@+id/linearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="40pt"
+    android:paddingBottom="10pt"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true">
+
+
+    <EditText
+       android:id="@+id/UserName"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:hint="UserName"
+        android:textColorHint="#808000"
+        android:textColor="#002E63"
+        android:textStyle="italic"
+        android:textSize="20dp"
+        android:layout_marginTop="6pt"
+        android:layout_marginLeft="5pt"
+        android:layout_marginRight="16pt"/>
+
+
+    <EditText
+        android:id="@+id/UserEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:layout_alignParentTop="true"
+        android:hint="Email"
+        android:textColorHint="#808000"
+        android:textColorHighlight="#c8e1ef"
+        android:singleLine="true"
+        android:textColor="#002E63"
+        android:textStyle="italic"
+        android:textSize="20dp"
+        android:layout_marginTop="8pt"
+        android:layout_marginLeft="5pt"
+        android:layout_marginRight="16pt"/>
+
+    <EditText
+        android:id="@+id/Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:hint="Password"
+        android:textColor="#002E63"
+        android:textStyle="italic"
+        android:textSize="20dp"
+        android:textColorHint="#808000"
+        android:layout_marginTop="10pt"
+        android:layout_marginLeft="5pt"
+        android:layout_marginRight="16pt"/>
+
+    <EditText
+        android:id="@+id/UserDOB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:hint="DateOfBirth(DD/MM/YYYY)"
+        android:textColorHint="#808000"
+        android:layout_below="@+id/Password"
+        android:textColor="#002E63"
+        android:textStyle="italic"
+        android:textSize="20dp"
+        android:layout_marginTop="8pt"
+        android:layout_marginRight="14pt"
+        android:layout_marginLeft="6pt" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="61dp">
+    <TextView
+        android:id="@+id/GenderTextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="I am:"
+        android:textColorHint="#808000"
+        android:textStyle="italic"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="8pt"
+        android:layout_marginRight="16pt"/>
+
+    <RadioGroup
+        android:id="@+id/Female_male_RadioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="19dp"
+        android:layout_marginLeft="90dp">
+        <RadioButton
+            android:id="@+id/male_RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:checked="true"
+            android:textColor="#808000"/>
+        <RadioButton
+            android:id="@+id/female_RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:textColor="#808000"/>
+    </RadioGroup>
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+    <Button
+        android:id="@+id/RegisterButton"
+        android:layout_width="60pt"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="#80414833"/>
+
+</RelativeLayout>

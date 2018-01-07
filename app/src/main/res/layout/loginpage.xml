@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/musicwall">
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Email"
+        android:textColorHint="#E7FEFF"
+        android:textColor="#E7FEFF"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:singleLine="true"
+        android:layout_marginTop="170dp"
+        android:inputType="textEmailAddress"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"/>
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:textColorHint="#E7FEFF"
+        android:textColor="#E7FEFF"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:singleLine="true"
+        android:ems="10"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:inputType="textPassword"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textSize="13dp"
+            android:textStyle="bold"
+            android:textColor="#BDB76B"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="16dp"
+            android:background="#80002147"/>
+        <Button
+            android:id="@+id/toregister"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:text="Don't have an Account?"
+            android:textSize="13dp"
+            android:textStyle="bold"
+            android:textColor="#BDB76B"
+            android:layout_marginLeft="70dp"
+            android:background="#20000000"/>
+
+    </LinearLayout>
+
+</LinearLayout>

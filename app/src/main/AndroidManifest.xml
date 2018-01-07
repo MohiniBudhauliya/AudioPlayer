@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="mb.com.mp3player">
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />
+    <application
+        android:largeHeap="true"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activities.LoginPage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <receiver android:name=".activities.HandleNotificationIntent">
+            <intent-filter>
+                <action android:name="button_clicked"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="mb.com.mp3player.previous" />
+                <action android:name="mb.com.mp3player.cancel" />
+                <action android:name="mb.com.mp3player.pause" />
+                <action android:name="mb.com.mp3player.next" />
+                <action android:name="mb.com.mp3player.play" />
+            </intent-filter>
+        </receiver>
+
+        <service android:enabled="true" android:name=".Service.BackgroundService"/>
+        <activity android:name=".activities.HomePage"/>
+        <activity android:name=".activities.RegistrationPage"/>
+
+    </application>
+
+</manifest>
