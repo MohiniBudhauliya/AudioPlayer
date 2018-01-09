@@ -8,13 +8,14 @@
     android:orientation="vertical">
     <TextView
         android:id="@+id/response"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:textSize="20dp"
-        android:textColor="#A3C1AD"
-        android:layout_marginLeft="5pt"
+        android:text="Register Now"
+        android:textColor="#654321"
+        android:layout_marginLeft="50pt"
         android:layout_marginRight="16pt"/>
 
 <LinearLayout
@@ -22,7 +23,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingTop="40pt"
+    android:paddingTop="20pt"
     android:paddingBottom="10pt"
     android:layout_alignParentTop="true"
     android:layout_alignParentLeft="true"
@@ -35,8 +36,8 @@
        android:layout_height="wrap_content"
         android:singleLine="true"
         android:hint="UserName"
-        android:textColorHint="#808000"
-        android:textColor="#002E63"
+        android:textColorHint="#654321"
+        android:textColor="#FFFFFF"
         android:textStyle="italic"
         android:textSize="20dp"
         android:layout_marginTop="6pt"
@@ -51,10 +52,10 @@
         android:maxLines="1"
         android:layout_alignParentTop="true"
         android:hint="Email"
-        android:textColorHint="#808000"
+        android:textColorHint="#654321"
         android:textColorHighlight="#c8e1ef"
         android:singleLine="true"
-        android:textColor="#002E63"
+        android:textColor="#FFFFFF"
         android:textStyle="italic"
         android:textSize="20dp"
         android:layout_marginTop="8pt"
@@ -68,10 +69,10 @@
         android:maxLines="1"
         android:singleLine="true"
         android:hint="Password"
-        android:textColor="#002E63"
+        android:textColor="#FFFFFF"
         android:textStyle="italic"
         android:textSize="20dp"
-        android:textColorHint="#808000"
+        android:textColorHint="#654321"
         android:layout_marginTop="10pt"
         android:layout_marginLeft="5pt"
         android:layout_marginRight="16pt"/>
@@ -83,9 +84,9 @@
         android:maxLines="1"
         android:singleLine="true"
         android:hint="DateOfBirth(DD/MM/YYYY)"
-        android:textColorHint="#808000"
+        android:textColorHint="#654321"
         android:layout_below="@+id/Password"
-        android:textColor="#002E63"
+        android:textColor="#FFFFFF"
         android:textStyle="italic"
         android:textSize="20dp"
         android:layout_marginTop="8pt"
@@ -100,7 +101,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="I am:"
-        android:textColorHint="#808000"
+        android:textColorHint="#654321"
         android:textStyle="italic"
         android:textSize="20dp"
         android:layout_marginTop="20dp"
@@ -119,14 +120,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Male"
+            android:textSize="15dp"
+            android:textStyle="bold"
             android:checked="true"
-            android:textColor="#808000"/>
+            android:textColor="#654321"/>
         <RadioButton
             android:id="@+id/female_RadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Female"
-            android:textColor="#808000"/>
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="40dp"
+            android:textColor="#654321"/>
     </RadioGroup>
 
     </RelativeLayout>
@@ -140,6 +146,7 @@
         android:layout_height="wrap_content"
         android:text="Register"
         android:textColor="#FFFFFF"
+        android:textStyle="italic"
         android:textSize="15dp"
         android:layout_below="@+id/linearLayout2"
         android:layout_centerHorizontal="true"

@@ -39,8 +39,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class PlayListFragment extends android.support.v4.app.Fragment {
     public static ListView playlist;
     int i = 0;
-    static ArrayList<String> songs = new ArrayList<>();
-    static ArrayList<String> songArt = new ArrayList<>();
+    public static ArrayList<String> songs = new ArrayList<>();
+    public static ArrayList<String> songArt = new ArrayList<>();
     static CustomAdapterforList adapter;
     Retrofit retrofit;
     ApiInterface apiInterface;
@@ -123,7 +123,7 @@ public class PlayListFragment extends android.support.v4.app.Fragment {
                                 byte[] image = mediaMetadataObj.getEmbeddedPicture();
                                 playlistbun.putInt("songNumber", songNumber);
                                 playlistbun.putString("CurrentSongName", name);
-                                playlistbun.putStringArrayList("AllSongName", songs);
+                                playlistbun.putStringArrayList("SongNames", songs);
                                 playlistbun.putByteArray("Albumart", image);
                                 //Sending control to background service to play music
                                 Intent gotoService = new Intent(getActivity(), BackgroundService.class);
@@ -219,13 +219,3 @@ public class PlayListFragment extends android.support.v4.app.Fragment {
     }
 
 }
-//    private void notifyAdapter()  {
-//        activity.runOnUiThread(new Runnable()  {
-//            public void run() {
-//                listView.setAdapter(null);
-//                if(adapter != null) {
-//                    adapter.notifyDataSetChanged();
-//                }
-//            }
-//        });
-//    }

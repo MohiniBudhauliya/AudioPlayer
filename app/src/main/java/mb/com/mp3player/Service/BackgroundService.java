@@ -15,12 +15,14 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 import android.widget.RemoteViews;
+import android.widget.Toast;
 
 import java.io.File;
 import java.util.ArrayList;
 
 import mb.com.mp3player.activities.HomePage;
 import mb.com.mp3player.R;
+import mb.com.mp3player.fragment.SongFragment;
 
 /**
  * Created by Anshul on 04-12-17.
@@ -34,7 +36,7 @@ public class BackgroundService extends Service {
     static int position;
     public static MediaPlayer mediaPlayer;
     public static ArrayList<File> getSongList;
-    ArrayList<String> songNamelist;
+    public static ArrayList<String> songNamelist;
     byte[] albumArt;
     private final int NOTIFICATION_ID_CUSTOM_BIG = 9;
     public NotificationCompat.Builder nc;
@@ -85,31 +87,35 @@ public class BackgroundService extends Service {
                     position = 0;
                 } else {
                     position++;
-                    currentSongName=songNamelist.get(position);
+                    currentSongName = songNamelist.get(position);
                     HomePage.setName.setText(currentSongName);
                     MediaMetadataRetriever obj = new MediaMetadataRetriever();
-                    obj.setDataSource(getSongList.get(position).toString());
-                    albumArt = obj.getEmbeddedPicture();
-                    generateNotification(intent);
-                    if(albumArt==null)
+                    if (SongFragment.songsName.contains(currentSongName)) {
+                        int index=SongFragment.songsName.indexOf(currentSongName);
+                        String path=SongFragment.songList.get(index).getPath();
+                        uri = Uri.parse(path);
+                        obj.setDataSource(uri.toString());
+                        albumArt = obj.getEmbeddedPicture();
+                        generateNotification(intent);
+                        if (albumArt == null) {
+                            HomePage.img.setImageResource(R.drawable.defaultmusicalbumart);
+                        } else {
+                            HomePage.img.setImageBitmap(BitmapFactory.decodeByteArray(albumArt, 0, albumArt.length));
+                        }
+                        try {
+                            Thread.sleep(2000);
+                            mediaPlayer = MediaPlayer.create(BackgroundService.this, uri);
+                            mediaPlayer.setOnCompletionListener(this);
+                            mediaPlayer.start();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                    else
                     {
-                        HomePage.img.setImageResource(R.drawable.defaultmusicalbumart);
+                        Toast.makeText(BackgroundService.this,"Song is not available on your device",Toast.LENGTH_SHORT).show();                    }
                     }
-                    else{
-                        HomePage.img.setImageBitmap(BitmapFactory.decodeByteArray(albumArt, 0, albumArt.length));
-                    }
-                    try {
-                        Thread.sleep(2000);
-                        uri = Uri.parse(getSongList.get(position).toString());
-                        mediaPlayer = MediaPlayer.create(BackgroundService.this, uri);
-                        mediaPlayer.setOnCompletionListener(this);
-                        mediaPlayer.start();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
-                }
-
             }
         });
     }
@@ -133,7 +139,7 @@ public class BackgroundService extends Service {
         // Set PendingIntent into Notification
         nc.setContentIntent(pendingIntent);
         // Set Icon
-        nc.setSmallIcon(R.drawable.playbutton);
+        nc.setSmallIcon(R.drawable.play);
         //set Title on music player notification when screen is locked
         nc.setContentTitle("Music Player");
         //set name of song on music player notification when screen is locked
@@ -159,7 +165,6 @@ public class BackgroundService extends Service {
     }
 
     public void setListeners(RemoteViews view) {
-       // Intent notificationIntent = new Intent(this, HandleNotificationIntent.class);
         Intent previousintent = new Intent(NOTIFY_PREVIOUS);
         Intent cancelintent = new Intent(NOTIFY_CANCEL);
         Intent pauseintent = new Intent(NOTIFY_PAUSE);

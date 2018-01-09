@@ -19,7 +19,7 @@ import retrofit2.http.POST;
 
 public interface ApiInterface
 {
-    String BASE_URL = "http://10.30.255.35:3000/";
+    String BASE_URL = "http://192.168.16.250:3000/";
 
     @Headers("Content-Type: application/json")
     @POST("register")

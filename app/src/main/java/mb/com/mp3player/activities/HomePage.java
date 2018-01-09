@@ -52,6 +52,7 @@ public class HomePage extends AppCompatActivity implements android.support.v7.ap
         play = (Button) findViewById(R.id.playbutton);
         pause=(Button)findViewById(R.id.pausebutton);
         setName=(TextView)findViewById(R.id.name);
+        setName.setSelected(true);
         img=(ImageView)findViewById(R.id.img);
         play.getBackground().setColorFilter(new LightingColorFilter(0xFFFFFF,Color.parseColor("#FFFFFF")));
         pause.getBackground().setColorFilter(new LightingColorFilter(0xFFFFFF,Color.parseColor("#FFFFFF")));
@@ -63,7 +64,7 @@ public class HomePage extends AppCompatActivity implements android.support.v7.ap
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
+             //
             }
 
             @Override
@@ -94,6 +95,7 @@ public class HomePage extends AppCompatActivity implements android.support.v7.ap
         //songTab.setIcon(R.drawable.bgwithheadphone);
         songTab.setTabListener(this);
 
+
         android.support.v7.app.ActionBar.Tab playlistTab = actionBar.newTab();
         playlistTab.setText("Playlist");
         playlistTab.setTabListener(this);
@@ -108,6 +110,7 @@ public class HomePage extends AppCompatActivity implements android.support.v7.ap
     @Override
     public void onTabSelected(android.support.v7.app.ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
         //linking page with the tab
+
     }
 
     @Override
